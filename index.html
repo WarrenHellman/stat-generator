@@ -9,6 +9,36 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>Stat Generator</h1>
+    </div>
+    <div class="form-box">
+      <form action="#" method="POST">
+        <div class="form-elements">
+          <label for="title">Title</label>
+          <input type="text" name="title">
+          <label for="subtitle">Subtitle</label>
+          <input type="text" name="subtitle">
+          <label for="attributes">Number of Attributes (min 3, max 8)</label>
+          <input type="number" name="attributes" id="attributeNum">
+
+          <div id="attributeField"></div>
+          
+          <label for="about">How many about lines would you like?</label>
+          <input type="number" name="about">
+          
+          <label for="photo-question">Would you like to add a profile photo?</label>
+          <label for="photo-yes">Yes (recommended)</label>
+          <input type="radio" name="photo-question" id="photo-yes">
+          <label for="photo-no">No</label>
+          <input type="radio" name="photo-question" id="photo-no">
+    
+        </div>
+        
+      </form>
+    </div>
+  </div>
   
   <script src="main.js"></script>
 </body>
