@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
-  <title>Document</title>
+  <title>The Stat Generator</title>
 </head>
 <body>
   <div class="container">
@@ -16,30 +17,43 @@
     <div class="form-box">
       <form action="#" method="POST">
         <div class="form-elements">
+          <!-- Name -->
           <label for="title">Title</label>
           <input type="text" name="title">
           <label for="subtitle">Subtitle</label>
           <input type="text" name="subtitle">
-          <label for="attributes">Number of Attributes (min 3, max 8)</label>
-          <input type="number" name="attributes" id="attributeNum">
 
-          <div id="attributeField"></div>
-          
-          <label for="about">How many about lines would you like?</label>
-          <input type="number" name="about">
-          
+          <!-- Photo -->
           <label for="photo-question">Would you like to add a profile photo?</label>
           <label for="photo-yes">Yes (recommended)</label>
           <input type="radio" name="photo-question" id="photo-yes">
           <label for="photo-no">No</label>
           <input type="radio" name="photo-question" id="photo-no">
-    
+
+          <!-- Chart -->
+          <label for="attributes">Number of Attributes (min 3, max 8)</label>
+          <input type="number" name="attributes" id="attributeNum">
+          <div id="attributeField"></div>
+          
+          <!-- About -->
+          <label for="about">How many About Me lines would you like?</label>
+          <input type="number" name="about" id="aboutNum">
+          <div id="aboutField"></div>
+
+          <button type="submit">Create!</button>
         </div>
         
       </form>
     </div>
   </div>
   
+  <div class="stat-card">
+    <div class="chart">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+  </div>
+    
   <script src="main.js"></script>
+  <script src="chart.js"></script>
 </body>
 </html>
