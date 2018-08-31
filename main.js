@@ -19,5 +19,5 @@ attributeNum.addEventListener('keyup', function(e){
       document.querySelector("#attributeField").appendChild(attributeName);
     }
   }
-  
+   
 })
