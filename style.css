@@ -6,3 +6,17 @@
   width: 200px;
   height: 200px;
 }
+
+input {
+  width: 25%;
+}
+
+.wideInput {
+  width: 50%;
+}
+
+button {
+  width: 10%;
+  background-color: lightcoral;
+  color: wheat;
+}

@@ -19,9 +19,10 @@
         <div class="form-elements">
           <!-- Name -->
           <label for="title">Title</label>
-          <input type="text" name="title">
+          <input id="titleName" type="text" name="title">
           <label for="subtitle">Subtitle</label>
-          <input type="text" name="subtitle">
+          <input id="subtitleName" type="text" name="subtitle">
+          <br><br>
 
           <!-- Photo -->
           <label for="photo-question">Would you like to add a profile photo?</label>
@@ -29,18 +30,23 @@
           <input type="radio" name="photo-question" id="photo-yes">
           <label for="photo-no">No</label>
           <input type="radio" name="photo-question" id="photo-no">
+          <br><br>
 
           <!-- Chart -->
           <label for="attributes">Number of Attributes (min 3, max 8)</label>
           <input type="number" name="attributes" id="attributeNum">
           <div id="attributeField"></div>
-          
+          <button type="button" id="preview">Preview Chart</button>
+          <br><br>
+
           <!-- About -->
           <label for="about">How many About Me lines would you like?</label>
           <input type="number" name="about" id="aboutNum">
           <div id="aboutField"></div>
+          <br><br>
 
-          <button type="submit">Create!</button>
+          <!-- Submit -->
+          <button id = "create" type="button">Create!</button>
         </div>
         
       </form>
@@ -48,8 +54,18 @@
   </div>
   
   <div class="stat-card">
+    <div class="name">
+      <h3 id="title"></h2>
+      <h4 id="subtitle"></h2>
+    </div>
     <div class="chart">
       <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
+    <div class="profilePic">
+      <img src="" alt="">
+    </div>
+    <div class="about">
+      <ul></ul>
     </div>
   </div>
     
