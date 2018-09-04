@@ -75,15 +75,25 @@ let create = document.getElementById("create");
 create.addEventListener('click', generateForm);
 
 function generateForm(){
+  //adds Title Text
   let titleValue = document.getElementById("titleName").value;
   let title = document.getElementById("title");
   title.innerHTML = titleValue;
 
+  //Adds subtitle text
   let subtitleValue = document.getElementById("subtitleName").value;
   let subtitle = document.getElementById("subtitle");
   subtitle.innerHTML = subtitleValue;
 
-  let aboutField = document.getElementById('aboutField');
+  //Adds about text
+  let aboutField = document.getElementById('aboutField').children;
+  let aboutLines = document.getElementById("aboutLines");
+  for (let i= 0; i<aboutField.length; i++){
+    if (aboutField[i].value){
+      let li = document.createElement("li");
+      li.innerHTML = aboutField[i].value;
+      aboutLines.appendChild(li);
+    }
+  }
 
-  console.log(aboutField.children.length);
 }
