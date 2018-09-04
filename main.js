@@ -109,6 +109,8 @@ function generateForm(){
       aboutLines.appendChild(li);
     }
   }
+  let displayPic = document.getElementById("profilePic");
+  console.log(displayPic)
   generateChartData();
 }
 

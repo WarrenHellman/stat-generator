@@ -2,7 +2,9 @@
   display: grid;
 }
 
-
+body {
+  font-family: 'Cinzel', serif;
+}
 
 input {
   width: 25%;
@@ -25,31 +27,51 @@ button {
   margin-left: 200px;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(8, 1fr); 
+  background-image: url("background (2).jpg");
+  background-color: rgba(211, 211, 211, 0.3);
 }
 
 .name {
   grid-column-start: 2;
   grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-items: center;
 }
 
 .chart {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-row-end: 5;
+  margin-left: 20px;
 }
 
 .about {
   grid-column-start: 5;
   grid-column-end: 10;
-  grid-row-start: 3;
+  grid-row-start: 4;
   grid-row-end: 8;
+  font-size: 150%;
+  font-weight: 600;
+  color: rgb(82, 4, 4);
+  overflow-wrap: normal;
 }
 
-.profilePic {
+.profile {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-top: 20px;
+}
+
+#profilePic {
   height: 200px;
   width: auto;
   border-radius: 50%;
+  border: 5px double black;
+  /* display: none; */
 }
