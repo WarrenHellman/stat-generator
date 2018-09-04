@@ -1,13 +1,14 @@
 
 preview = document.getElementById("preview");
 
-preview.addEventListener('click', previewChart)
+preview.addEventListener('click', generateChartData)
 
-function previewChart(){
-  var ctx = document.getElementById('myChart')//.getContext('2d');
+function buildChart(object){
+  
+  var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
     // The type of chart we want to create
-    "type":"radar","data":{"labels":["Eating","Drinking","Sleeping","Designing","Coding","Cycling","Running"],"datasets":[{"label":"My First Dataset","data":[65,59,90,81,56,55,40],"fill":true,"backgroundColor":"rgba(255, 99, 132, 0.2)","borderColor":"rgb(255, 99, 132)","pointBackgroundColor":"rgb(255, 99, 132)","pointBorderColor":"#fff","pointHoverBackgroundColor":"#fff","pointHoverBorderColor":"rgb(255, 99, 132)"}]},"options":{"elements":{"line":{"tension":.1,"borderWidth":3}}}
+    "type":"radar","data":{"labels":object.labels,"datasets":[{"label":"My First Dataset","data":object.values,"fill":true,"backgroundColor":"rgba(255, 99, 132, 0.2)","borderColor":"rgb(255, 99, 132)","pointBackgroundColor":"rgb(255, 99, 132)","pointBorderColor":"#fff","pointHoverBackgroundColor":"#fff","pointHoverBorderColor":"rgb(255, 99, 132)"}]},"options":{"scale": {"ticks": {"suggestedMin":0}},"legend":{"display":false},"elements":{"line":{"tension":0,"borderWidth":3}}}
   });
 }
 

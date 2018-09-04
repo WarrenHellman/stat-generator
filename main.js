@@ -1,4 +1,3 @@
-// Bugs- Delete any <li> dynamic creator if number is changed
 
 const attributeNum = document.getElementById("attributeNum");
 const aboutNum = document.getElementById("aboutNum");
@@ -10,6 +9,13 @@ attributeNum.addEventListener('keyup', function(e){
   }
   else {
     let fields = attributeNum.value;
+    const attributeField = document.querySelector("#attributeField")
+    
+    if(attributeField.children.length){
+      while (attributeField.firstChild){
+        attributeField.removeChild(attributeField.firstChild)
+      }
+    }
     for (let i=0; i<fields; i++){
       // Creates label input field nodes for name
       const attributeLabel = document.createElement("label")
@@ -28,9 +34,8 @@ attributeNum.addEventListener('keyup', function(e){
 
       const valueName = document.createElement("input")
       valueName.type = "number";
+      valueName.className = "attrValue";
       valueName.name = "Value "+(i+1);
-
-      const attributeField = document.querySelector("#attributeField")
 
       const breaks = document.createElement("br");
       attributeField.appendChild(attributeLabel);
@@ -50,6 +55,15 @@ aboutNum.addEventListener('keyup', function(e){
   }
   else {
     let fields = aboutNum.value;
+    let aboutField = document.querySelector("#aboutField");
+    
+    //removes previous elements
+    if(aboutField.children.length){
+      while (aboutField.firstChild){
+        aboutField.removeChild(aboutField.firstChild)
+      }
+    }
+    //builds new elements
     for (let i=0; i<fields; i++){
       const aboutLabel = document.createElement("label")
       aboutLabel.setAttribute("for", "About "+(i+1));
@@ -62,10 +76,10 @@ aboutNum.addEventListener('keyup', function(e){
 
       const breaks = document.createElement("br");
       
-      document.querySelector("#aboutField").appendChild(aboutLabel);
-      document.querySelector("#aboutField").appendChild(aboutName);
-      document.querySelector("#aboutField").appendChild(breaks);
-      document.querySelector("#aboutField").appendChild(breaks);
+      aboutField.appendChild(aboutLabel);
+      aboutField.appendChild(aboutName);
+      aboutField.appendChild(breaks);
+      aboutField.appendChild(breaks);
     }
   }
 })
@@ -95,5 +109,26 @@ function generateForm(){
       aboutLines.appendChild(li);
     }
   }
+  generateChartData();
+}
 
+function generateChartData() {
+  let chartData ={}
+  // let num = document.querySelector("#attributeNum").value;
+  // chartData.num = num;
+
+  let labelArr = [];
+  let labels = document.querySelectorAll(".attrName");
+  for (let i = 0; i<labels.length; i++) {
+    labelArr.push(labels[i].value)
+  }
+  chartData.labels = labelArr;
+
+  let valueArr = [];
+  let values = document.querySelectorAll(".attrValue");
+  for (let i = 0; i<values.length; i++) {
+    valueArr.push(values[i].value)
+  }
+  chartData.values = valueArr;
+  buildChart(chartData)
 }
