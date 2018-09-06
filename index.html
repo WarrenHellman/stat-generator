@@ -16,65 +16,71 @@
     <div class="row">
       <div class="header">
           <h1>Stat Generator</h1>
+          <p id="intro">Welcome to this free resource for creating custom character sheets for your next project. I've included a few examples below to show you what it can do. Select one of the included templates or create your own.</p>
+          <button type="button" id="start" class="btn btn-default" onclick="enterTitle()">Get Started</button>
       </div>
     </div>
     
     <div class="form-box">
       <form action="#" method="POST">
         <div class="form-elements">
-          <div class="form-group">
-            <div class="form-name">
+          <!-- <div class="form-group"> -->
+            <div id="nameTag" class="form-name hideDiv">
               <!-- Name -->
               <label for="title">Title</label>
               <input class="form-control" id="titleName" type="text" name="title">
               <label for="subtitle">Subtitle</label>
               <input class="form-control" id="subtitleName" type="text" name="subtitle">
+              <button type="button" id="startNext" class="btn btn-default" onclick="enterChart()">Next: Create your chart</button>
             </div>
-          </div>
+          <!-- </div> -->
           
-          <div class="form-group">
-            <div class="form-chart">
+          <!-- <div class="form-group"> -->
+            <div id="chartTag" class="form-chart hideDiv">
               <!-- Chart -->
               <label for="attributes">Number of Attributes (min 3, max 8)</label>
               <input class="form-control" type="number" name="attributes" id="attributeNum">
               <div id="attributeField"></div>
               <button class="btn btn-default" type="button" id="preview">Preview Chart</button>
+              <button class="btn btn-default" type="button" id="aboutNext" onclick="enterAbout()">Next: Add your flavor text</button>
             </div>
-          </div>
+          <!-- </div> -->
           
-          <div class="form-group">
-            <div class="form-about">
+          <!-- <div class="form-group"> -->
+            <div id= "about"class="form-about hideDiv">
                 <!-- About -->
-              <label for="about">How many About Me lines would you like?</label>
+              <label for="about">How many 'about' lines?</label>
               <input class="form-control" type="number" name="about" id="aboutNum">
               <div id="aboutField"></div>
+              <button class="btn btn-default" type="button" id="photoNext" onclick="enterPhoto()">Next: Add your profile photo</button>
             </div>
-          </div>
+          <!-- </div> -->
 
-          <div class="form-group">
-            <div class="form-photo">
+          <!-- <div class="form-group"> -->
+            <div id = "photo" class="form-photo hideDiv">
               <!-- Photo -->
               <label for="photo-question">Would you like to add a profile photo?</label>
               <label for="photo-yes">Yes (recommended)</label>
               <input type="radio" name="photo-question" id="photo-yes">
               <label for="photo-no">No</label>
               <input type="radio" name="photo-question" id="photo-no">
-              <input type="file" name="upload" id="fileinput">
+              <input type="file" name="upload" id="fileinput" onchange="loadFile(event)">
+              <p>All done? Click 'Create' to see your profile card!</p>
             </div>
-          </div>
+          <!-- </div> -->
           
-          <div class="row">
-              <!-- Submit -->
-            <button class="btn btn-default" id = "create" type="button">Create!</button>
-          </div>
+          
           
         </div>
-        
+        <div id="showCreate" class="hideDiv">
+            <!-- Submit -->
+          <button class="btn btn-default" id = "create" type="button">Create!</button>
+        </div>
       </form>
     </div>
   </div>
   <br><br>
-  <div class="stat-card">
+  <div id="showStatCard" class="stat-card hideDiv">
     <div class="name">
       <h2 id="title"></h2>
       <hr>
@@ -84,7 +90,7 @@
       <canvas id="myChart" width="300" height="300"></canvas>
     </div>
     <div class="profile">
-      <img id="profilePic" src="C:\Users\Admin\Desktop\stat generator\background (2).jpg" alt="">
+      <img id="profilePic">
     </div>
     <div class="about">
       <ul id="aboutLines"></ul>
@@ -93,5 +99,11 @@
     
   <script src="main.js"></script>
   <script src="chart.js"></script>
+  <script>
+    var loadFile = function(event) {
+      var output = document.getElementById('profilePic');
+      output.src = URL.createObjectURL(event.target.files[0]);
+  };
+  </script>
 </body>
 </html>

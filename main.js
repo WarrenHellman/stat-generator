@@ -1,3 +1,42 @@
+function enterTitle() {
+  let intro = document.getElementById("intro");
+  intro.className = "hideDiv"
+
+  let startBtn = document.getElementById("start");
+  startBtn.className = "hideDiv";
+
+  let showTitle = document.getElementById("nameTag");
+  showTitle.classList.remove("hideDiv");
+}
+
+function enterChart() {
+  let showTitle = document.getElementById("nameTag");
+  showTitle.className = "hideDiv";
+
+  let showChart = document.getElementById("chartTag");
+  showChart.classList.remove("hideDiv")
+}
+
+function enterAbout() {
+  let showChart = document.getElementById("chartTag");
+  showChart.className = "hideDiv";
+
+  let showAbout = document.getElementById("about");
+  showAbout.classList.remove("hideDiv")
+}
+
+function enterPhoto() {
+  let showAbout = document.getElementById("about");
+  showAbout.className = "hideDiv";
+
+  let showPhoto = document.getElementById("photo");
+  showPhoto.classList.remove("hideDiv")
+
+  let showCreate = document.getElementById("showCreate");
+  showCreate.classList.remove("hideDiv")
+
+}
+
 
 const attributeNum = document.getElementById("attributeNum");
 const aboutNum = document.getElementById("aboutNum");
@@ -89,6 +128,9 @@ let create = document.getElementById("create");
 create.addEventListener('click', generateForm);
 
 function generateForm(){
+  let showStatCard = document.getElementById("showStatCard")
+  showStatCard.classList.remove("hideDiv")
+  
   //adds Title Text
   let titleValue = document.getElementById("titleName").value;
   let title = document.getElementById("title");
@@ -111,16 +153,15 @@ function generateForm(){
   }
   let displayPic = document.getElementById("profilePic");
   displayPic.style.display = "inline";
-  let filePath = document.getElementById("fileinput");
 
-  console.log(filePath.value)
   generateChartData();
 }
 
+
 function generateChartData() {
+  // When you build a template, build a custom object for each that has all of the default settings and return buildChart(template1) or buildChart(template2). for custom options, check if input is filled out or return a default
+  
   let chartData ={}
-  // let num = document.querySelector("#attributeNum").value;
-  // chartData.num = num;
 
   let labelArr = [];
   let labels = document.querySelectorAll(".attrName");
@@ -135,5 +176,6 @@ function generateChartData() {
     valueArr.push(values[i].value)
   }
   chartData.values = valueArr;
+
   buildChart(chartData)
 }

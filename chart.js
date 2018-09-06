@@ -8,7 +8,7 @@ function buildChart(object){
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
     // The type of chart we want to create
-    "type":"radar","data":{"labels":object.labels,"datasets":[{"label":"My First Dataset","data":object.values,"fill":true,"backgroundColor":"rgba(255, 99, 132, 0.2)","borderColor":"rgb(255, 99, 132)","pointBackgroundColor":"rgb(255, 99, 132)","pointBorderColor":"#fff","pointHoverBackgroundColor":"#fff","pointHoverBorderColor":"rgb(255, 99, 132)"}]},"options":{"scale": {"ticks": {"suggestedMin":0}},"legend":{"display":false},"elements":{"line":{"tension":0,"borderWidth":3}}}
+    "type":"radar","data":{"labels":object.labels,"datasets":[{"data":object.values,"fill":true,"backgroundColor":"rgba(255, 99, 132, 0.2)","borderColor":"rgb(255, 99, 132)","pointBackgroundColor":"rgb(255, 99, 132)","pointBorderColor":"#fff","pointHoverBackgroundColor":"#fff","pointHoverBorderColor":"rgb(255, 99, 132)"}]},"options":{"scale": {"ticks": {"suggestedMin":0},"angleLines":{"color":"green"}, "pointLabels":{"fontColor":"orange", "fontFamily":"Cinzel", "fontSize":20}},"legend":{"display":false},"elements":{"line":{"tension":0,"borderWidth":3}}}
   });
 }
 
