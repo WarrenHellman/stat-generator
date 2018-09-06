@@ -20,11 +20,11 @@ attributeNum.addEventListener('keyup', function(e){
       // Creates label input field nodes for name
       const attributeLabel = document.createElement("label")
       attributeLabel.setAttribute("for", "Ability "+(i+1));
-      attributeLabel.innerHTML = "Ability Name"+(i+1)+":";
+      attributeLabel.innerHTML = "Ability Name "+(i+1)+":";
 
       const attributeName = document.createElement("input")
       attributeName.type = "text";
-      attributeName.className = "attrName";
+      attributeName.className = "attrName form-control";
       attributeName.name = "Ability "+(i+1);
 
       // Creates label input field nodes for value
@@ -34,7 +34,7 @@ attributeNum.addEventListener('keyup', function(e){
 
       const valueName = document.createElement("input")
       valueName.type = "number";
-      valueName.className = "attrValue";
+      valueName.className = "attrValue form-control";
       valueName.name = "Value "+(i+1);
 
       const breaks = document.createElement("br");
@@ -72,7 +72,7 @@ aboutNum.addEventListener('keyup', function(e){
       const aboutName = document.createElement("input")
       aboutName.type = "text";
       aboutName.name = "About "+(i+1);
-      aboutName.className = "wideInput";
+      aboutName.className = "wideInput form-control";
 
       const breaks = document.createElement("br");
       
@@ -110,7 +110,10 @@ function generateForm(){
     }
   }
   let displayPic = document.getElementById("profilePic");
-  console.log(displayPic)
+  displayPic.style.display = "inline";
+  let filePath = document.getElementById("fileinput");
+
+  console.log(filePath.value)
   generateChartData();
 }
 

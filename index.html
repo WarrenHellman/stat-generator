@@ -6,65 +6,85 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
   <title>The Stat Generator</title>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Stat Generator</h1>
+    <div class="row">
+      <div class="header">
+          <h1>Stat Generator</h1>
+      </div>
     </div>
+    
     <div class="form-box">
       <form action="#" method="POST">
         <div class="form-elements">
-          <!-- Name -->
-          <label for="title">Title</label>
-          <input id="titleName" type="text" name="title">
-          <label for="subtitle">Subtitle</label>
-          <input id="subtitleName" type="text" name="subtitle">
-          <br><br>
+          <div class="form-group">
+            <div class="form-name">
+              <!-- Name -->
+              <label for="title">Title</label>
+              <input class="form-control" id="titleName" type="text" name="title">
+              <label for="subtitle">Subtitle</label>
+              <input class="form-control" id="subtitleName" type="text" name="subtitle">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-chart">
+              <!-- Chart -->
+              <label for="attributes">Number of Attributes (min 3, max 8)</label>
+              <input class="form-control" type="number" name="attributes" id="attributeNum">
+              <div id="attributeField"></div>
+              <button class="btn btn-default" type="button" id="preview">Preview Chart</button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-about">
+                <!-- About -->
+              <label for="about">How many About Me lines would you like?</label>
+              <input class="form-control" type="number" name="about" id="aboutNum">
+              <div id="aboutField"></div>
+            </div>
+          </div>
 
-          <!-- Photo -->
-          <label for="photo-question">Would you like to add a profile photo?</label>
-          <label for="photo-yes">Yes (recommended)</label>
-          <input type="radio" name="photo-question" id="photo-yes">
-          <label for="photo-no">No</label>
-          <input type="radio" name="photo-question" id="photo-no">
-          <br><br>
-
-          <!-- Chart -->
-          <label for="attributes">Number of Attributes (min 3, max 8)</label>
-          <input type="number" name="attributes" id="attributeNum">
-          <div id="attributeField"></div>
-          <button type="button" id="preview">Preview Chart</button>
-          <br><br>
-
-          <!-- About -->
-          <label for="about">How many About Me lines would you like?</label>
-          <input type="number" name="about" id="aboutNum">
-          <div id="aboutField"></div>
-          <br><br>
-
-          <!-- Submit -->
-          <button id = "create" type="button">Create!</button>
+          <div class="form-group">
+            <div class="form-photo">
+              <!-- Photo -->
+              <label for="photo-question">Would you like to add a profile photo?</label>
+              <label for="photo-yes">Yes (recommended)</label>
+              <input type="radio" name="photo-question" id="photo-yes">
+              <label for="photo-no">No</label>
+              <input type="radio" name="photo-question" id="photo-no">
+              <input type="file" name="upload" id="fileinput">
+            </div>
+          </div>
+          
+          <div class="row">
+              <!-- Submit -->
+            <button class="btn btn-default" id = "create" type="button">Create!</button>
+          </div>
+          
         </div>
         
       </form>
     </div>
   </div>
-  
+  <br><br>
   <div class="stat-card">
     <div class="name">
-      <h1 id="title"></h1>
+      <h2 id="title"></h2>
       <hr>
-      <h2 id="subtitle"></h2>
+      <h3 id="subtitle"></h3>
     </div>
     <div class="chart">
       <canvas id="myChart" width="300" height="300"></canvas>
     </div>
     <div class="profile">
-      <img id="profilePic" src="portrait.jpg" alt="">
+      <img id="profilePic" src="C:\Users\Admin\Desktop\stat generator\background (2).jpg" alt="">
     </div>
     <div class="about">
       <ul id="aboutLines"></ul>

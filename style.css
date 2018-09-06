@@ -1,9 +1,11 @@
 .form-elements {
   display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 body {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cinzel', serif !important;
 }
 
 input {
@@ -15,7 +17,6 @@ input {
 }
 
 button {
-  width: 10%;
   background-color: lightcoral;
   color: wheat;
 }
@@ -73,5 +74,5 @@ button {
   width: auto;
   border-radius: 50%;
   border: 5px double black;
-  /* display: none; */
+  display: none;
 }
