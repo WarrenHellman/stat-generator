@@ -1,10 +1,12 @@
 
-preview = document.getElementById("preview");
+let preview = document.getElementById("preview");
 
 preview.addEventListener('click', generateChartData)
 
 function buildChart(object){
   
+  let showStatCard = document.getElementById("showStatCard");
+  showStatCard.classList.remove("hideDiv")
   var ctx = document.getElementById('myChart').getContext('2d');
   var chart = new Chart(ctx, {
     // The type of chart we want to create

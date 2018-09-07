@@ -22,15 +22,15 @@
     </div>
     
     <div class="form-box">
-      <form action="#" method="POST">
+      <form class="form-horizontal" action="#" method="POST">
         <div class="form-elements">
           <!-- <div class="form-group"> -->
             <div id="nameTag" class="form-name hideDiv">
               <!-- Name -->
-              <label for="title">Title</label>
-              <input class="form-control" id="titleName" type="text" name="title">
-              <label for="subtitle">Subtitle</label>
-              <input class="form-control" id="subtitleName" type="text" name="subtitle">
+              <label for="title" class="control-label">Title</label>
+              <input class="form-control col-md-3" id="titleName" type="text" name="title" placeholder="Enter your title">
+              <label for="subtitle" class="control-label">Subtitle</label>
+              <input class="form-control col-md-3" id="subtitleName" type="text" name="subtitle" placeholder="Enter your subtitle">
               <button type="button" id="startNext" class="btn btn-default" onclick="enterChart()">Next: Create your chart</button>
             </div>
           <!-- </div> -->
@@ -38,8 +38,8 @@
           <!-- <div class="form-group"> -->
             <div id="chartTag" class="form-chart hideDiv">
               <!-- Chart -->
-              <label for="attributes">Number of Attributes (min 3, max 8)</label>
-              <input class="form-control" type="number" name="attributes" id="attributeNum">
+              <label class="control-label" for="attributes">Number of Attributes (min 3, max 8)</label>
+              <input class="form-control col-md-4" type="number" name="attributes" id="attributeNum" placeholder="Choose a number between 3-8">
               <div id="attributeField"></div>
               <button class="btn btn-default" type="button" id="preview">Preview Chart</button>
               <button class="btn btn-default" type="button" id="aboutNext" onclick="enterAbout()">Next: Add your flavor text</button>
@@ -60,11 +60,14 @@
             <div id = "photo" class="form-photo hideDiv">
               <!-- Photo -->
               <label for="photo-question">Would you like to add a profile photo?</label>
+              <br><br>
               <label for="photo-yes">Yes (recommended)</label>
-              <input type="radio" name="photo-question" id="photo-yes">
-              <label for="photo-no">No</label>
-              <input type="radio" name="photo-question" id="photo-no">
-              <input type="file" name="upload" id="fileinput" onchange="loadFile(event)">
+              <input type="radio" name="photo-question" id="photo-yes" onclick="showUpload()">
+              
+              <label for="photo-no" id="noSpacing"
+              >No</label>
+              <input type="radio" name="photo-question" id="photo-no" onclick="hideUpload()">
+              <input class="hideDiv" type="file" name="upload" id="fileinput" onchange="loadFile(event)">
               <p>All done? Click 'Create' to see your profile card!</p>
             </div>
           <!-- </div> -->

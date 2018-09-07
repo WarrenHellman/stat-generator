@@ -37,6 +37,17 @@ function enterPhoto() {
 
 }
 
+function showUpload() {
+  let aYes = document.getElementById("fileinput");
+
+  aYes.classList.remove("hideDiv");
+}
+
+function hideUpload() {
+  let aNo = document.getElementById("fileinput");
+
+  aNo.className = "hideDiv";
+}
 
 const attributeNum = document.getElementById("attributeNum");
 const aboutNum = document.getElementById("aboutNum");
