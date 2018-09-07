@@ -188,5 +188,8 @@ function generateChartData() {
   }
   chartData.values = valueArr;
 
+  // Other Object values:
+  // gridline color, font color/size, scale disable, line color, background color for fill, point color, scale color and background color, point style (square, diamond, circle)
+
   buildChart(chartData)
 }
