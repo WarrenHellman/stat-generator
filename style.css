@@ -71,7 +71,8 @@ button {
   font-size: 150%;
   font-weight: 600;
   color: rgb(82, 4, 4);
-  overflow-wrap: normal;
+  /* overflow-wrap: normal; */
+  word-break:break-all
 }
 
 .profile {
