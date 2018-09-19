@@ -15,6 +15,14 @@ body {
   margin-right: 15%;
 }
 
+.title {
+  text-align: center;
+  height: 80px;
+  vertical-align: middle;
+  margin-top: 20px;
+
+}
+
 #noSpacing {
   margin-left: 5%;
 }
@@ -48,9 +56,10 @@ button {
 .name {
   grid-column-start: 2;
   grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  align-items: center;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  text-align: center;
+  margin-top:10px;
 }
 
 .chart {
@@ -58,29 +67,28 @@ button {
   height: 300px;
   grid-column-start: 1;
   grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
   margin-left: 20px;
 }
 
 .about {
   grid-column-start: 5;
   grid-column-end: 10;
-  grid-row-start: 4;
-  grid-row-end: 8;
-  font-size: 150%;
+  grid-row-start: 5;
+  grid-row-end: 11;
+  font-size: 120%;
   font-weight: 600;
   color: rgb(82, 4, 4);
   /* overflow-wrap: normal; */
-  word-break:break-all
+  word-break:break-word
 }
 
 .profile {
   grid-column-start: 8;
   grid-column-end: 10;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  margin-top: 20px;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 
 #profilePic {
